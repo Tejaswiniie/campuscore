@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Console</title>
+<link rel="stylesheet" th:href="@{/admin.css}"></head>
+<body>
+<header th:replace="~{fragments :: adminTop('dashboard')}"></header>
+<main class="wrap">
+  <div class="head"><h1>Dashboard</h1><p>All student, faculty and academic records are created and changed here.</p></div>
+  <div class="stats">
+    <a class="stat" th:href="@{/admin/students}"><div class="n" th:text="${studentCount}">0</div>
+      <div class="l">Total students</div><div class="go">Manage students</div></a>
+    <a class="stat" th:href="@{/admin/faculty}"><div class="n" th:text="${facultyCount}">0</div>
+      <div class="l">Total faculty</div><div class="go">Manage faculty</div></a>
+    <a class="stat" th:href="@{/admin/departments}"><div class="n" th:text="${departmentCount}">0</div>
+      <div class="l">Departments</div><div class="go">Departments and sections</div></a>
+    <a class="stat" th:href="@{/admin/complaints}"><div class="n" th:text="${openComplaints}">0</div>
+      <div class="l">Pending complaints</div><div class="go">Read and answer</div></a>
+  </div>
+</main>
+</body></html>
